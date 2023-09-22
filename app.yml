@@ -1,0 +1,13 @@
+---
+- hosts: all  # Replace with the target hosts or groups
+  become: yes  # Run tasks with sudo (root) privileges
+
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install the application
+      apt:
+        name: curl
+        state: present
