@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install the application
-      apt-get:
-        name: curl
+      apt:
+        name: vim
         state: absent
         
