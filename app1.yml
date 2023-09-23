@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install the application
-      apt:
+      snap:
         name: curl
         state: absent
         become: yes  # Individual task level privilege escalation
