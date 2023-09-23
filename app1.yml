@@ -5,5 +5,5 @@
   tasks:
     - name: Install the application
       apt:
-        name: parallel-ssh
-        state: present
+        name: curl
+        state: absent
