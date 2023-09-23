@@ -10,4 +10,4 @@
     - name: Install the application
       apt:
         name: pssh
-        state: install
+        state: present
