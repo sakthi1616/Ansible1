@@ -1,5 +1,6 @@
 ---
-- hosts: all  # Replace with the target hosts or groups
+- name: app1.yml
+ hosts: all  # Replace with the target hosts or groups
   become: yes  # Individual task level privilege escalation
 
   tasks:
@@ -7,9 +8,11 @@
       apt:
         update_cache: yes
     
-    - name: Install the application
+    - name: Remove vim
       apt:
         name: vim
         state: absent
         become: yes  # Ensure this task runs with sudo privileges
-        
+
+
+    
