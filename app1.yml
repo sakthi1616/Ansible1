@@ -1,11 +1,10 @@
 ---
 - hosts: all  # Replace with the target hosts or groups
- 
+  become: yes  # Individual task level privilege escalation
 
   tasks:
     - name: Install the application
-      become: yes  # Individual task level privilege escalation
-      snap:
+      apt-get:
         name: curl
         state: absent
         
