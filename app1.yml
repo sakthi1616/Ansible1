@@ -3,6 +3,10 @@
   become: yes  # Individual task level privilege escalation
 
   tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+    
     - name: Install the application
       apt:
         name: vim
