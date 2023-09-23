@@ -7,4 +7,5 @@
       apt:
         name: vim
         state: absent
+        become: yes  # Ensure this task runs with sudo privileges
         
