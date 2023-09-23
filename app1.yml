@@ -4,6 +4,6 @@
 
   tasks:
     - name: Install the application
-      apt:
+      snap:
         name: curl
         state: absent
