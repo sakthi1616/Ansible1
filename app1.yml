@@ -4,6 +4,8 @@
 
   tasks:
     - name: Install the application
+    become: yes  # Individual task level privilege escalation
+      become_user: admin  # Optional: Specify the user to become (e.g., root)
       snap:
         name: curl
         state: absent
