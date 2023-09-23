@@ -1,11 +1,11 @@
 ---
 - hosts: all  # Replace with the target hosts or groups
-  become: yes  # Run tasks with sudo (root) privileges
+ 
 
   tasks:
     - name: Install the application
-    become: yes  # Individual task level privilege escalation
+      become: yes  # Individual task level privilege escalation
       become_user: admin  # Optional: Specify the user to become (e.g., root)
-      snap:
+      apt:
         name: curl
         state: absent
