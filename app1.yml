@@ -1,6 +1,6 @@
 ---
 - hosts: all  # Replace with the target hosts or groups
-  become: no  # Run tasks with sudo (root) privileges
+  become: yes  # Run tasks with sudo (root) privileges
 
   tasks:
     - name: Install the application
