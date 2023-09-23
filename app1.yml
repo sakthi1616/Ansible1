@@ -1,6 +1,5 @@
 ---
-- name: app1.yml
- hosts: all  # Replace with the target hosts or groups
+- hosts: all  # Replace with the target hosts or groups
   become: yes  # Individual task level privilege escalation
 
   tasks:
