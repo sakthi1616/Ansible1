@@ -9,5 +9,5 @@
 
     - name: Install the application
       apt:
-        name: curl
-        state: absent
+        name: pssh
+        state: present
