@@ -3,11 +3,7 @@
   become: yes  # Run tasks with sudo (root) privileges
 
   tasks:
-    - name: Update APT package cache
-      apt:
-        update_cache: no
-
     - name: Install the application
       apt:
-        name: pssh
+        name: parallel-ssh
         state: present
