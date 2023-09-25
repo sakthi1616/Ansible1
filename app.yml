@@ -5,7 +5,7 @@
   become: yes
   become_method: sudo
   become_user: su
-  become_password: 'Ubun2@L0gin'
+  ansible_become_password: 'Ubun2@L0gin'
   
 
   tasks:
