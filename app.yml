@@ -3,9 +3,8 @@
 - name: Install wget
   hosts: all
   become: yes
-  become_method: sudo
   become_user: su
-  ansible_become_password: 'Ubun2@L0gin'
+  become_method: sudo
   
 
   tasks:
@@ -18,4 +17,6 @@
       ansible.builtin.package:
         name: wget
         state: present
+      vars:
+        ansible_become_password: Ubun2@L0gin
 
