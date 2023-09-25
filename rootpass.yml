@@ -1,0 +1,12 @@
+---
+- name: Provide root password for a task
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Run a task that requires root password
+      expect:
+        command: apt  # Replace with the command that requires root privileges
+        responses:
+          "Enter root password:": "Ubun2@L0gin"
