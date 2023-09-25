@@ -10,7 +10,7 @@
     - name: Remove vim
       apt:
         name: vim
-        state: present
+        state: absent
         
 
 
