@@ -2,7 +2,11 @@
 - hosts: all  # Replace with the target hosts or groups
   become: yes  # Individual task level privilege escalation
 
+
   tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
     - name: Remove vim
       apt:
         name: vim
