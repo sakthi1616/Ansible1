@@ -1,14 +1,15 @@
 ---
 - name: Install Curl
   hosts: all
-  become: yes  # To execute with sudo privileges
+  become: yes
+  become_method: sudo
+  become_user: admin
+  become_flags: "-H -S"
 
   tasks:
-    - name: Update APT cache
-      apt:
-        update_cache: yes
-
     - name: Install Curl
       apt:
         name: curl
-        state: present  # Ensure that curl is present (installed)
+        state: present  # You can use "latest" for the latest version or "absent" for removal
+      vars:
+        ansible_become_pass: Ubun2@L0gin 
