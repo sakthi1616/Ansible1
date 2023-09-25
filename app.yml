@@ -5,7 +5,7 @@
   become: yes
   become_method: sudo
   become_user: su
-  become_pass: 'Ubun2@L0gin'
+  become_password: 'Ubun2@L0gin'
   
 
   tasks:
