@@ -1,15 +1,19 @@
 ---
-- name: Install Curl
+- name: Install wget
   hosts: all
   become: yes
   become_method: sudo
-  become_user: root
-  become_flags: "-H -S"
+  become_user: su
+  #ansible_become_pass: Ubun2@L0gin
 
   tasks:
-    - name: Install Curl
-      apt:
-        name: curl
-        state: present  # You can use "latest" for the latest version or "absent" for removal
-      vars:
-        ansible_become_pass: Ubun2@L0gin 
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'  # Adjust for other Linux distributions
+
+    - name: Install wget package
+      ansible.builtin.package:
+        name: wget
+        state: present
+
