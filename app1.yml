@@ -1,23 +1,14 @@
 ---
-- name: Install Curl
-  hosts: all
+- name: Gather System Information
+  hosts: all  # Replace with the target host where you want to gather information
   become: yes  # To execute with sudo privileges
 
   tasks:
-    - name: Update APT cache
-      apt:
-        update_cache: yes
+    - name: Gather System Information
+      command: "uname -a"
+      register: system_info
+      changed_when: false  # Prevent Ansible from reporting 'changed' when running this task
 
-    - name: Install Curl
-      apt:
-        name: curl
-        state: present  # Ensure that curl is present (installed)
-
-    # You can add more tasks or handlers as needed
-
-  handlers:
-    - name: Restart Service
-      service:
-        name: curl
-        state: restarted
-
+    - name: Display System Information
+      debug:
+        var: system_info.stdout_lines
