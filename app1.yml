@@ -1,17 +1,23 @@
 ---
-- hosts: all  # Replace with the target hosts or groups
-  become: yes  # Individual task level privilege escalation
-
+- name: Install Curl
+  hosts: all
+  become: yes  # To execute with sudo privileges
 
   tasks:
-    - name: Update APT package cache
+    - name: Update APT cache
       apt:
         update_cache: yes
-    - name: install curl
+
+    - name: Install Curl
       apt:
         name: curl
-        state: present
-        
+        state: present  # Ensure that curl is present (installed)
 
+    # You can add more tasks or handlers as needed
 
-    
+  handlers:
+    - name: Restart Service
+      service:
+        name: curl
+        state: restarted
+
