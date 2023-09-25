@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   become_method: sudo
-  become_user: admin
+  become_user: root
   become_flags: "-H -S"
 
   tasks:
