@@ -7,10 +7,10 @@
     - name: Update APT package cache
       apt:
         update_cache: yes
-    - name: Remove vim
+    - name: install curl
       apt:
-        name: vim
-        state: absent
+        name: curl
+        state: present
         
 
 
