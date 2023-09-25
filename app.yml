@@ -4,7 +4,7 @@
   become: yes
   become_method: sudo
   become_user: su
-  #ansible_become_pass: Ubun2@L0gin
+  ansible_become_pass: Ubun2@L0gin
 
   tasks:
     - name: Update package cache
