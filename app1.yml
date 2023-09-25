@@ -10,7 +10,7 @@
     - name: Remove vim
       apt:
         name: vim
-        state: absent
+        state: present
         become: yes  # Ensure this task runs with sudo privileges
 
 
