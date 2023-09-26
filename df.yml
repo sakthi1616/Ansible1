@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Execute df -h command
-      command: top -n 1
+      command: top
       register: df_output
 
     - name: Display df -h output
