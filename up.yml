@@ -1,11 +1,6 @@
 ---
 - name: Check Uptime
   hosts: all
-  tasks:
-    - name: Get Uptime
-      command: uptime
-      register: uptime_output
-
-    - name: Display Uptime
-      debug:
-        var: uptime_output.stdout
+    tasks:
+    - name: Execute the top command
+      command: top
