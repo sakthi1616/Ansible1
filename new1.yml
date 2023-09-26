@@ -1,7 +1,10 @@
 ---
-- name: Run Terminal Commands
+- name: Run Ubuntu Terminal Commands
   hosts: all  # Replace with the target host or group of hosts
 
   tasks:
-    - name: Execute Command
-      command: ansible all -m shell -a "top -n 1" -b  # Replace with your desired command
+    - name: Execute ls command
+      command: ls -l  # Replace with your desired terminal command
+
+    - name: Execute another command
+      command: echo "Hello, Ansible!"  # Replace with another command
