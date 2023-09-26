@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   become_method: sudo
-  become_user: admin
+  become_user: su
   vars_prompt:
     - name: "1505"
       prompt: "Ubun2@L0gin"
