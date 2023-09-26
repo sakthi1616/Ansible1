@@ -2,5 +2,5 @@
 - name: Check Uptime
   hosts: all
     tasks:
-    - name: Execute the top command
-      command: top
+    - name: Gather facts
+      ansible.builtin.gather_facts:
