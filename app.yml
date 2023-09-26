@@ -1,20 +1,23 @@
 ---
-- name: Install Curl
+- name: Execute a command with sudo
   hosts: all
-  become: yes  # To execute with sudo privileges
+  become: yes
   become_method: sudo
-  become_user: root
-  become_flags: "-H -S"
-
+  become_user: su
   tasks:
-    - name: Update APT cache
+    - name: Include sudo password from sudo_password.yml
+      include_vars:
+        file: sudo_password.yml
+        name: sudo_password_vars
+
+    - name: Update package cache
       apt:
         update_cache: yes
+      environment:
+        ANSIBLE_BECOME_PASS: "{{ sudo_password_vars.sudo_password }}"
+      register: command_output
 
-    - name: Install Curl
-      apt:
-        name: curl
-        state: present  # Ensure that curl is present (installed)
-        vars:
-        ansible_become_pass: Ubun2@L0gin 
+    - name: Display command output
+      debug:
+        var: command_output.stdout
 
