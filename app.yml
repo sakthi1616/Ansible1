@@ -2,6 +2,9 @@
 - name: Install Curl
   hosts: all
   become: yes  # To execute with sudo privileges
+  become_method: sudo
+  become_user: root
+  become_flags: "-H -S"
 
   tasks:
     - name: Update APT cache
