@@ -1,8 +1,10 @@
 ---
-      
-- name: Install wget
+- name: Execute tasks with root privileges
   hosts: all
   become: yes
+  become_user: admin
+  vars:
+    ansible_become_pass: "Ubun2@L0gin"  # Replace with your root password
 
   
 
@@ -16,5 +18,4 @@
       ansible.builtin.package:
         name: wget
         state: present
-      vars:
-        var: ansible_user
+      
