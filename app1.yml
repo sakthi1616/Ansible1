@@ -1,14 +1,17 @@
 ---
-- name: Gather System Information
-  hosts: all  # Replace with the target host where you want to gather information
-  become: yes  # To execute with sudo privileges
-
+- name: Execute a command with sudo
+  hosts: all
+  become: yes
+  become_method: sudo
+  become_user: admin
   tasks:
-    - name: Gather System Information
-      command: "uname -a"
-      register: system_info
-      changed_when: false  # Prevent Ansible from reporting 'changed' when running this task
+    - name: Update package cache
+      apt:
+        update_cache: yes
+      environment:
+        ANSIBLE_BECOME_PASS: "{{ Ubun2@L0gin }}"
+      register: command_output
 
-    - name: Display System Information
+    - name: Display command output
       debug:
-        var: system_info.stdout_lines
+        var: command_output.stdout
