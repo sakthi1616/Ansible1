@@ -2,8 +2,8 @@
 - name: Execute a command with sudo
   hosts: all
   become: yes
-  become_method: sudo
-  become_user: su
+  become_method: su
+  become_user: admin
   tasks:
     - name: Include sudo password from sudo_password.yml
       include_vars:
