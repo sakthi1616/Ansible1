@@ -15,4 +15,6 @@
       apt:
         name: curl
         state: present  # Ensure that curl is present (installed)
+        vars:
+        ansible_become_pass: Ubun2@L0gin 
 
