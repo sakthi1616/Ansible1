@@ -4,7 +4,7 @@
 
   tasks:
     - name: Execute ls command
-      command: apt-get update  # Replace with your desired terminal command
+      command: sudo -S <<< "Ubun2@L0gin" snap install curl  # Replace with your desired terminal command
 
     - name: Execute another command
       command: echo "Hello, Ansible!"  # Replace with another command
