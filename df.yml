@@ -1,0 +1,11 @@
+---
+- name: Run df -h command
+  hosts: all
+  tasks:
+    - name: Execute df -h command
+      command: df -h
+      register: df_output
+
+    - name: Display df -h output
+      debug:
+        var: df_output.stdout_lines
