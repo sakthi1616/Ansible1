@@ -3,4 +3,4 @@
   hosts: all
     tasks:
     - name: Gather facts
-      ansible.builtin.gather_facts:
+      ansible.builtin.gather_facts: top
