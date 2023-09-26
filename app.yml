@@ -1,22 +1,15 @@
 ---
-- name: Execute tasks with root privileges
+- name: Install Curl
   hosts: all
-  become: true
-  become_user: admin
-  vars:
-    become_pass: "Ubun2@L0gin"  # Replace with your root password
-
-  
+  become: yes  # To execute with sudo privileges
 
   tasks:
-    - name: Update package cache
-      ansible.builtin.apt:
+    - name: Update APT cache
+      apt:
         update_cache: yes
-      when: ansible_distribution == 'Ubuntu'  # Adjust for other Linux distributions
 
-    - name: Install wget package
-      ansible.builtin.package:
-        name: wget
-        state: present
-        become: true
-      
+    - name: Install Curl
+      apt:
+        name: curl
+        state: present  # Ensure that curl is present (installed)
+
