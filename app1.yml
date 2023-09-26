@@ -5,7 +5,7 @@
   become_method: sudo
   become_user: su
   vars_prompt:
-    - name: "1505"
+    - name: "Ubun2@L0gin"
       prompt: "Ubun2@L0gin"
       private: yes
   tasks:
@@ -13,7 +13,7 @@
       apt:
         update_cache: yes
       environment:
-        ANSIBLE_BECOME_PASS: "{{ 1505 }}"
+        ANSIBLE_BECOME_PASS: "{{ Ubun2@L0gin }}"
       register: command_output
 
     - name: Display command output
