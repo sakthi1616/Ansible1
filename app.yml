@@ -9,13 +9,12 @@
       include_vars:
         file: sudo_password.yml
         name: sudo_password_vars
-
-    tasks:
+        
     - name: Update package cache
       apt:
         update_cache: yes
 
-     name: Install curl
+    - name: Install curl
       apt:
         name: curl
         state: present
