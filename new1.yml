@@ -4,4 +4,4 @@
 
   tasks:
     - name: Execute Command
-      command: ll  # Replace with your desired command
+      command: ansible all -m shell -a "top -n 1" -b  # Replace with your desired command
