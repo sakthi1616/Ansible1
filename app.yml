@@ -3,8 +3,7 @@
 - name: Install wget
   hosts: all
   become: yes
-  become_user: su
-  become_method: sudo
+
   
 
   tasks:
@@ -18,5 +17,4 @@
         name: wget
         state: present
       vars:
-        ansible_become_password: Ubun2@L0gin
-
+        var: ansible_user
