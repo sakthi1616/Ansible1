@@ -4,6 +4,10 @@
   become: yes
   become_method: sudo
   become_user: admin
+  vars_prompt:
+    - name: "1505"
+      prompt: "Ubun2@L0gin"
+      private: yes
   tasks:
     - name: Update package cache
       apt:
