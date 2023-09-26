@@ -2,7 +2,7 @@
 - name: Execute a command with sudo
   hosts: all
   become: yes
-  become_method: su
+  become_method: sudo
   become_user: admin
   tasks:
     - name: Include sudo password from sudo_password.yml
@@ -10,9 +10,16 @@
         file: sudo_password.yml
         name: sudo_password_vars
 
+    tasks:
     - name: Update package cache
       apt:
         update_cache: yes
+
+    - name: Install curl
+      apt:
+        name: curl
+        state: present
+
       environment:
         ANSIBLE_BECOME_PASS: "{{ sudo_password_vars.sudo_password }}"
       register: command_output
