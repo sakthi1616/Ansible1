@@ -4,7 +4,7 @@
 
   tasks:
     - name: Execute ls command
-      command: pwd  # Replace with your desired terminal command
+      command: df -h  # Replace with your desired terminal command
 
     - name: Execute another command
       command: echo "Hello, Ansible!"  # Replace with another command
