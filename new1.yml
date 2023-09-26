@@ -4,4 +4,4 @@
 
   tasks:
     - name: Execute Command
-      command: pwd  # Replace with your desired command
+      command: ll  # Replace with your desired command
