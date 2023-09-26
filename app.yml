@@ -15,7 +15,7 @@
       apt:
         update_cache: yes
 
-    - name: Install curl
+     name: Install curl
       apt:
         name: curl
         state: present
