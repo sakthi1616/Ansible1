@@ -9,7 +9,7 @@
       apt:
         update_cache: yes
       environment:
-        ANSIBLE_BECOME_PASS: "Ubun2@L0gin"
+        ANSIBLE_BECOME_PASS: "{{ 1505 }}"
       register: command_output
 
     - name: Display command output
