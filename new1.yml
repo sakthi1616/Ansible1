@@ -3,7 +3,7 @@
   hosts: all  # Replace with the target host or group of hosts
 
   tasks:
-    - name: Execute ls command
-      command: echo "Ubun2@L0gin" | sudo -S -u admin apt install curl  # Replace with your desired terminal command
+    - name: Execute  command
+      command: echo "Ubun2@L0gin" | sudo -S -u admin cat /etc/passwd  # Replace with your desired terminal command
 
   
