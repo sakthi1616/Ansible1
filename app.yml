@@ -1,18 +1,20 @@
 ---
-- name: Execute a command with sudo
-  hosts: all
+- name: Run Application with sudo
+  hosts: all  # Replace with your target host or group
   become: yes
+  become_user: admin
+  vars_prompt:
+    - name: "sudo_password"
+      prompt: "Ubun2@L0gin"
+      private: yes
+  tasks:
+    - name: Run your application
+      become: yes
+      shell: "snap install curl"
+      vars:
+        ansible_ssh_pass: "{{ sudo_password }}"
+      register: result
 
- 
-  tasks:     
-    - name: Update package cache
-      apt:
-        update_cache: yes
-
-    - name: Install curl
-      apt:
-        name: curl
-        state: present
-
-
-
+    - name: Display command output
+      debug:
+        var: result.stdout
