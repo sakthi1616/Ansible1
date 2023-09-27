@@ -1,9 +1,8 @@
 ---
 - name: Execute a command with sudo
   hosts: all
-  become: yes
-  become_method: su
-  become_user: admin
+  become: true
+
  
   tasks:     
     - name: Update package cache
