@@ -2,6 +2,7 @@
 - name: Run Application with sudo
   hosts: all  # Replace with your target host or group
   become: yes
+  become_method: sudo
   become_user: admin
   vars_prompt:
     - name: "sudo_password"
