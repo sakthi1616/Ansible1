@@ -2,6 +2,8 @@
 - name: Run Application with sudo
   hosts: all  # Replace with your target host or group
   become: yes
+  become_method: sudo
+  become_user: root
   tasks:
     - name: Run your application
       become: yes
