@@ -2,10 +2,10 @@
 - name: Run Application with sudo
   hosts: all  # Replace with your target host or group
   become: yes
-  become_user: admin
+  become_user: gnanaprabhu
   vars_prompt:
     - name: "sudo_password"
-      prompt: "Ubun2@L0gin"
+      prompt: "123"
       private: yes
   tasks:
     - name: Run your application
