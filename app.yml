@@ -2,10 +2,7 @@
 - name: Execute a command with sudo
   hosts: all
   become: yes
-  become_method: sudo
-  become_user: root
-  vars:
-    ansible_become_pass: "{{ lookup('file','/main/pass.txt') }}"
+ 
   tasks:     
     - name: Update package cache
       apt:
