@@ -4,6 +4,6 @@
 
   tasks:
     - name: Execute  command
-      command: sudo -S <<< "Ubun2@L0gin" apt remove curl  # Replace with your desired terminal command
+      command: sudo -S <<< "123" apt remove curl  # Replace with your desired terminal command
 
   
