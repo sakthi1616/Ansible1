@@ -9,7 +9,7 @@
       private: yes
   tasks:
     - name: Run your application
-      shell: "df -h"
+      shell: "snap install curl"
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
       register: hosts
