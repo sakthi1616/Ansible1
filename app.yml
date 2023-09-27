@@ -7,6 +7,6 @@
   tasks:
     - name: Run your application
       become: yes
-      shell: "apt install curl"
+      shell: "apt remove curl"
       ignore_errors: yes
       
