@@ -1,0 +1,17 @@
+---
+- name: Ansible become Playbook demo
+# Defining the remote server where Ansible Playbook will be executed.
+  hosts: all
+# Set become_method to su to activate privilege escalation.
+  become_method: su
+# Switching to the new user shankym
+  become_user: admin
+  tasks:
+
+# Task to Check the Sudoers file if Admins are allowed to perform all operations 
+    - name: Validate the sudoers file before saving
+      ansible.builtin.lineinfile:
+         path: /etc/sudoers
+         state: present
+         regexp: '^%ADMIN ALL='
+         line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
