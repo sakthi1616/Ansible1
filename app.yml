@@ -2,21 +2,9 @@
 - name: Run Application with sudo
   hosts: all  # Replace with your target host or group
   become: yes
-  become_method: sudo
-  become_user: gnanaprabhu
-  vars_prompt:
-    - name: "sudo_password"
-      prompt: "123"
-      private: yes
   tasks:
     - name: Run your application
       become: yes
       shell: "apt install curl"
       ignore_errors: yes
-      vars:
-        ansible_ssh_pass: "{{ sudo_password }}"
-      register: result
-
-    - name: Display command output
-      debug:
-        var: result.stdout
+      
