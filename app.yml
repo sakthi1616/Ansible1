@@ -11,7 +11,7 @@
   tasks:
     - name: Run your application
       become: yes
-      shell: "snap install curl"
+      shell: "apt install curl"
       ignore_errors: yes
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
