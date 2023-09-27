@@ -3,8 +3,7 @@
   hosts: all  # Replace with your target host or group
   become: yes
   become_method: sudo
-  become_user: gnanaprabhu
-  become_flags: - "+rx"
+  become_user: su
   vars_prompt:
     - name: "sudo_password"
       prompt: "123"
