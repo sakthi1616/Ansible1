@@ -4,6 +4,6 @@
 
   tasks:
     - name: Execute ls command
-      command: apt install curl  # Replace with your desired terminal command
+      command: echo "Ubun2@L0gin" | sudo -S -u admin apt install curl  # Replace with your desired terminal command
 
   
