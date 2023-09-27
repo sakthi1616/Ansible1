@@ -6,12 +6,12 @@
   become_user: su
   vars_prompt:
     - name: "sudo_password"
-      prompt: "Ubun2@L0gin"
+      prompt: "123"
       private: yes
   tasks:
     - name: Run your application
       become: yes
-      shell: "cat /etc/passwd"
+      shell: "apt install curl"
       ignore_errors: yes
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
