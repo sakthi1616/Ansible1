@@ -3,13 +3,10 @@
   hosts: all
   become: yes
   become_method: sudo
-  become_user: admin
-  tasks:
-    - name: Include sudo password from sudo_password.yml
-      include_vars:
-        file: sudo_password.yml
-        name: sudo_password_vars
-        
+  become_user: root
+  vars:
+    ansible_become_pass: "{{ lookup('file','https://github.com/sakthi1616/Ansible1/blob/main/pass.txt') }}"
+  tasks:     
     - name: Update package cache
       apt:
         update_cache: yes
@@ -19,11 +16,5 @@
         name: curl
         state: present
 
-      environment:
-        ANSIBLE_BECOME_PASS: "{{ sudo_password_vars.sudo_password }}"
-      register: command_output
 
-    - name: Display command output
-      debug:
-        var: command_output.stdout
 
