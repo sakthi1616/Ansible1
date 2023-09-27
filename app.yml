@@ -5,7 +5,7 @@
   become_method: sudo
   become_user: root
   vars:
-    ansible_become_pass: "{{ lookup('file','github.com/sakthi1616/Ansible1/blob/main/pass.txt') }}"
+    ansible_become_pass: "{{ lookup('file','/main/pass.txt') }}"
   tasks:     
     - name: Update package cache
       apt:
