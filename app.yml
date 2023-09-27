@@ -11,7 +11,7 @@
   tasks:
     - name: Run your application
       become: yes
-      shell: "echo "123" | sudo -S apt install curl -y"
+      shell: "cat /etc/passwd"
       ignore_errors: yes
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
