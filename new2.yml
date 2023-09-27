@@ -9,7 +9,7 @@
       private: yes
   tasks:
     - name: Run your application
-      shell: "echo "123" | sudo -S  apt install cul"
+      shell: "df -h"
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
       register: hosts
