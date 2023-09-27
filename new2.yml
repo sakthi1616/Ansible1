@@ -16,4 +16,4 @@
 
     - name: Display command output
       debug:
-        var: result.stdout
+        var: all
