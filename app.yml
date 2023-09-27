@@ -6,7 +6,7 @@
   become_user: su
   vars_prompt:
     - name: "sudo_password"
-      prompt: "123"
+      prompt: "Ubun2@L0gin"
       private: yes
   tasks:
     - name: Run your application
