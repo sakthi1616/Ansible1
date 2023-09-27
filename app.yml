@@ -4,7 +4,8 @@
   become: yes
   become_method: sudo
   become_user: gnanaprabhu
-  become_flags: "+rx"
+  become_flags: 
+          - "+rx"
   vars_prompt:
     - name: "sudo_password"
       prompt: "123"
