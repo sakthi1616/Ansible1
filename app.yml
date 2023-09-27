@@ -1,7 +1,7 @@
 ---
 - name: Execute a command with sudo
   hosts: all
-  become: true
+  become: yes
 
  
   tasks:     
