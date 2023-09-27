@@ -12,8 +12,8 @@
       shell: "df -h"
       vars:
         ansible_ssh_pass: "{{ sudo_password }}"
-      register: result
+      register: hosts
 
     - name: Display command output
       debug:
-        var: all
+        var: hosts.stdout
