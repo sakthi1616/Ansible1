@@ -4,6 +4,6 @@
 
   tasks:
     - name: Execute  command
-      command: echo "Ubun2@L0gin" | sudo -S -u admin cat /etc/passwd  # Replace with your desired terminal command
+      command: echo "Ubun2@L0gin" | sudo -S -u admin df -h  # Replace with your desired terminal command
 
   
