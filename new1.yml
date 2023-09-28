@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: pwd
+      shell: sudo apt remove curl -y
       become: yes
       register: hosts
 
