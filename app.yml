@@ -3,7 +3,7 @@
   hosts: all  # Replace with your target host or group
   become: yes
   become_method: sudo
-  become_user: su
+  become_user: gnanaprabhu
   tasks:
     - name: Run your application
       become: yes
