@@ -4,6 +4,6 @@
 
   tasks:
     - name: Execute  command
-      command: sudo cat /etc/group  # Replace with your desired terminal command
+      command: df -h  # Replace with your desired terminal command
 
   
