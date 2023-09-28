@@ -8,5 +8,5 @@
     - name: Run your application
       become: yes
       shell: "apt remove curl -y"
-      ignore_errors: yes
+    
       
