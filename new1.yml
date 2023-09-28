@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: sudo snap remove curl -y
+      shell: sudo snap remove curl
       become: yes
       register: hosts
 
