@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      command: ls -l /home/gnanaprabhu/
+      shell: pwd
       become: yes
 
   
