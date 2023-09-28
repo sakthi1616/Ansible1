@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: sudo apt install curl -y
+      shell: sudo cat /etc/shadow
       become: yes
       register: hosts
 
