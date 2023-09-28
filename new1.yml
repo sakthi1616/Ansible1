@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: sudo snap remove curl
+      shell: sudo cat /etc/group
       become: yes
       register: hosts
 
