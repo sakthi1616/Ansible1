@@ -4,6 +4,6 @@
 
   tasks:
     - name: Execute  command
-      command: sudo -S <<< "123" apt remove curl -y  # Replace with your desired terminal command
+      command: sudo apt remove curl -y  # Replace with your desired terminal command
 
   
