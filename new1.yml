@@ -5,5 +5,10 @@
     - name: Run a command
       shell: free -h
       become: yes
+      register: hosts
+
+    - name: Display command output
+      debug:
+        var: hosts.stdout
 
   
