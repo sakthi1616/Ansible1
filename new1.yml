@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: pwd
+      shell: sudo cat /etc/shadow
       become: yes
       register: hosts
 
