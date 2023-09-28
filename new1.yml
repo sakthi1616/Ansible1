@@ -1,9 +1,9 @@
 ---
 - name: Run Ubuntu Terminal Commands
-  hosts: all  # Replace with the target host or group of hosts
-
+  hosts: all
   tasks:
-    - name: Execute  command
-      command: df -h  # Replace with your desired terminal command
+    - name: Run a command
+      command: ls -l /home/gnanaprabhu/
+      become: yes
 
   
