@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Run a command
-      shell: free -h
+      shell: pwd
       become: yes
       register: hosts
 
